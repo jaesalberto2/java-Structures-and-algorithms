@@ -4,7 +4,19 @@ public class main {
     public static void main(String[] args) {
    
 
-    LinkedList myLinkedList = new LinkedList(1); 
+
+        DoublyLinkedList myDoublyLinkedList = new DoublyLinkedList(1); // Create a new doubly linked list with the first node having value 1
+        
+        myDoublyLinkedList.append(2); // Append a new node with value 2 to the doubly linked list
+        myDoublyLinkedList.append(3); // Append a new node with value 3 to the doubly linked list
+        myDoublyLinkedList.append(4); // Append a new node with value 4 to the doubly linked list
+       // myDoublyLinkedList.append(5); // Append a new node with value 5 to the doubly linked list
+        myDoublyLinkedList.printList(); // Print the doubly linked list
+        System.out.println("\n"); // Print a new line for better readability
+        myDoublyLinkedList.swapPairs(); 
+        myDoublyLinkedList.printList(); // Print the doubly linked list after swapping the first and last nodes
+
+        /*     LinkedList myLinkedList = new LinkedList(1); 
     myLinkedList.append(2); 
     myLinkedList.append(3); 
     myLinkedList.append(4);
@@ -14,7 +26,7 @@ public class main {
     
     myLinkedList.reverseBetween(2,3); // Reverse the linked list between indices 2 and 3
     myLinkedList.printList(); // Print the linked list after reversal
-
+ */
     /* 
        System.out.println(myLinkedList.binaryToDecimal());
 

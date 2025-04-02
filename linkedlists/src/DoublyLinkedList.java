@@ -1,5 +1,8 @@
 
-import jdk.jfr.snippets.Snippets;
+
+
+
+
 
 public class DoublyLinkedList {
 
@@ -60,6 +63,9 @@ public class DoublyLinkedList {
 
     //prepend method to add a new node at the beginning of the list
     public void prepend(int value) {
+     
+        //evitar que se cicle el valor
+        if (value == head.data) return; // Do nothing if the value is already in the list
         Node newNode = new Node(value); // Create a new node with the given value
         if (length == 0) { // If the list is empty
             head = newNode; // Set the head to the new node
@@ -69,7 +75,6 @@ public class DoublyLinkedList {
             head.prev = newNode; // Set the previous of the current head to the new node
             head = newNode; // Update the head to the new node
         }
-        length++; // Increment the length of the list
     }// end prepend method
 
     //remove first method to remove the first node from the list
@@ -167,6 +172,92 @@ public class DoublyLinkedList {
         }
     }// end remove method
 
+    //print method to print the doubly linked list
+    public void printList() {
+        Node temp = head; // Start from the head node
+      
+        while (temp != null) { // Traverse the list until the end
+            System.out.print(temp.data + " <-> "); // Print the data of the current node
+            temp = temp.next; // Move to the next node
+        }
+        System.out.println(head.data); // Print null at the end of the list
+   
+    }// end print method
+
+    //swap first and last
+
+    public void swapFirstAndLast() {
+        
+        if (length < 2) return; // Do nothing if the list has less than 2 nodes
+
+  
+        if (length < 2) return;
+        int temp = head.data;
+        head.data = tail.data;
+        tail.data = temp;
+
+    }// end swap first and last method
+
+    //reverse
+
+    public void reverse(){
+        Node current = head;
+        Node temp = null;
+     
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+     
+        temp = head;
+        head = tail;
+        tail = temp;
+    }
+
+    //palindrome test
+    public boolean palindrome() {
+        if (length <= 1) return true; // A list with 0 or 1 node is always a palindrome
+        Node front = head;
+        Node last = tail;
+        while (front != null && last != null && front != last && front.prev != last) {
+            if (front.data != last.data) return false; // If data doesn't match, it's not a palindrome
+            front = front.next; // Move front forward
+            last = last.prev; // Move last backward
+        }
+        return true; // If all checks pass, it's a palindrome
+    }
     
+
+    public void swapPairs() {
+        Node dummyNode = new Node(0);
+        dummyNode.next = head;
+        Node previousNode = dummyNode;
+    
+        while (head != null && head.next != null) {
+            Node firstNode = head;
+            Node secondNode = head.next;
+    
+            previousNode.next = secondNode;
+            firstNode.next = secondNode.next;
+            secondNode.next = firstNode;
+    
+            secondNode.prev = previousNode;
+            firstNode.prev = secondNode;
+            
+            if (firstNode.next != null) {
+                firstNode.next.prev = firstNode;
+            }
+    
+            head = firstNode.next;
+            previousNode = firstNode;
+        }
+    
+        head = dummyNode.next;
+        if (head != null) head.prev = null;
+    }
+    
+
 
 }
