@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Estructora de datos y algoritmos.iml" filepath="$PROJECT_DIR$/.idea/Estructora de datos y algoritmos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Graphs/Graphs.iml" filepath="$PROJECT_DIR$/Graphs/Graphs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hashtables/Hashtables.iml" filepath="$PROJECT_DIR$/Hashtables/Hashtables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stacks/Stacks.iml" filepath="$PROJECT_DIR$/Stacks/Stacks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tree/Tree.iml" filepath="$PROJECT_DIR$/Tree/Tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linkedlists/linkedlists.iml" filepath="$PROJECT_DIR$/linkedlists/linkedlists.iml" />
+    </modules>
+  </component>
+</project>
